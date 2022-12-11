@@ -3,7 +3,7 @@ session_start();
 if (isset($_POST['login'])) 
 {
     $email = $_POST["email"];
-    $pswd = $_POST["password"];
+    $pswd = $_POST["pass"];
    
     if($email == "admin" && $pswd =="admin"){
         $_SESSION['email']=$email;

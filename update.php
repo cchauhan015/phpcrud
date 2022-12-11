@@ -1,16 +1,13 @@
 <?php
     session_start();
-    include_once 'conn.php';
-    if($_SESSION['uname'] != null && $_SESSION['uname']=='admin'){
-        $id = $_GET['id'];
-        $sql = "Select * from registration where id =$id";
-        // echo $sql;
-        $res = mysqli_query($con,$sql);
-        if(mysqli_num_rows($res)>0){
-            $data = mysqli_fetch_array($res);
-            
-            
-        }
+    include("conn.php");
+    if(isset($_SESSION['email'])){
+        $query =  "select* from registration" ;
+    
+        $res =mysqli_query($con,$query);
+    
+       
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +33,7 @@
                     </tr>
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" class="form-control" name="name" value="<?php echo $data['name']; ?>">
+                        <td><input type="text" class="form-control" name="name" value="<?php echo $uname['name']; ?>">
                         </td>
                     </tr>
                     <tr>
@@ -46,8 +43,8 @@
                     </tr>
                     <tr>
                         <td>Password</td>
-                        <td><input type="text" class="form-control" name="password"
-                                value="<?php echo $data['Password']; ?>"></td>
+                        <td><input type="text" class="form-control" name="pass"
+                                value="<?php echo $data['password']; ?>"></td>
                     </tr>
                     <tr>
                         <td colspan=2 class="text-center">

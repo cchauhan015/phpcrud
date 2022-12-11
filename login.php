@@ -18,7 +18,7 @@
         </label>
         <label>
           <span>Password</span>
-          <input type="password" name="password">
+          <input type="password" name="pass">
         </label>
         <button class="submit" type="submit" name="login">Sign In</button>
         <p class="forgot-pass">Forgot Password ?</p>
@@ -62,7 +62,7 @@
           </label>
           <label>
             <span>Password</span>
-            <input type="password" name="password">
+            <input type="password" name="pass">
           </label>
           <label>
             <span>Confirm Password</span>

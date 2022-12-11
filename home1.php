@@ -36,6 +36,7 @@
 <body>
     <h1>welcome to .....! <?php echo $_SESSION['email']; ?>   </h1>
     <h1><a href="logout.php">logout</a></h1>
+    
     <div class="row d-flex justify-content-around mt-5">
         <form class="form-group" method="post">
             <div class="d-inline-block">
