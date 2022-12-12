@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("conn.php");
-    if(isset($_SESSION['email'])){
+    if(isset($_SESSION['email']) && $_SESSION['email']=='admin'){
         $query =  "select* from registration" ;
     
         $res =mysqli_query($con,$query);
@@ -102,7 +102,11 @@
                 <td><?php echo $data['password']; ?></td>
                 <td><a href="update.php?id=<?php echo $data['id']; ?>"><i class="fa fa-pencil"
                             style="font-size:24px;color:green"></i></a></td>
-                <td><a href=""><i class="fa fa-trash" style="font-size:24px;color:red"></i></a></td>
+                            <td>
+                <a href="delete.php?id=<?php echo $data['id']; ?>"><i class="fa fa-trash"
+                            style="font-size:24px;color:red"></i></a>
+                </td>
+                
 
             </tr>
             <?php

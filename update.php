@@ -5,8 +5,11 @@
         $query =  "select* from registration" ;
     
         $res =mysqli_query($con,$query);
-    
-       
+
+    if (mysqli_num_rows($res) > 0) {
+        $data = mysqli_fetch_array($res);
+
+    }
     
 ?>
 <!DOCTYPE html>
@@ -33,7 +36,7 @@
                     </tr>
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" class="form-control" name="name" value="<?php echo $uname['name']; ?>">
+                        <td><input type="text" class="form-control" name="name" value="<?php echo $data['name']; ?>">
                         </td>
                     </tr>
                     <tr>
